@@ -20,6 +20,9 @@ const NavBar = () => {
             <Link to='/'>Dashboard</Link>
           </li>
           <li>
+            <Link to='/hoots/new'>NEW HOOT</Link>
+          </li>
+          <li>
             <Link to='/hoots'>HOOTS</Link>
           </li>
           <li>
