@@ -22,6 +22,20 @@ const show = async (hootId) => {
   }
 };
 
+const deleteHoot = async (hootId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${hootId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const create = async (hootFormData) => {
   try {
     const res = await fetch(BASE_URL, {
@@ -54,4 +68,4 @@ const createComment = async (hootId, commentFormData) => {
   }
 };
 
-export { index, show, create, createComment };
+export { index, show, create, createComment, deleteHoot };
